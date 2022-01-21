@@ -2,11 +2,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academy kitties </title>
+  <title>Crypto Doggies</title>
   <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Peralta&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <script src="assets/bootstrap/js/popper.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/web3.min.js"></script>
+  <script src="./abi.js"></script>
 
   <link rel="stylesheet" href="assets/css/mystyle.css">
   <link rel="stylesheet" href="assets/css/cats.css">
@@ -15,109 +21,121 @@
   <link rel="stylesheet" href="assets/css/frontend.css">
 </head>
   <body>
-    <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
+
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="./home.html">Doggies<i class="fas fa-paw logo"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Doggies Factory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./gallery.html">Your Doggies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./breed.html">Breed <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <button class="btn light-b-shadow" id="wallet">Connect wallet</button>
+      </div>
+    </nav>
+    <div class="container p-5" style="margin-top: 8vh;margin-bottom: 10vh;">
         <div align="center">
-        <h1 class="c-white">Kitties-Factory</h1>
-        <p class="c-white">Create your custom Kitty</p>
+        <h1><i class="fas fa-paw"></i> Doggies-Factory <i class="fas fa-paw"></i></h1>
+        <h6>Create your custom Doggy</h6>
     </div>
-        <div class="row">
-            <div class="col-lg-4 catBox m-2 light-b-shadow">
-                <div class="cat">
-                    <div class="cat__ear">
-                        <div id="leftEar" class="cat__ear--left">
-                            <div class="cat__ear--left-inside"></div>
+
+        <div class="row mt-4">
+            <div class="col-lg-4 dogBox m-2 light-b-shadow">
+                <div class="doggy">
+                    <div class="canvas">
+                        <div class="dog">
+                          <div class="eye-spot-left"></div>
+                          <div class="eye-left">
+                            <div class="pupil"></div>
+                          </div>
+                          <div class="eye-spot-right"></div>
+                          <div class="eye-right">
+                            <div class="pupil"></div>
+                          </div>
+                          <div class="lower-lip">
+                            <div class="lower-lip-pink"></div>
+                          </div>
+                          <div class="snout-left"></div>
+                          <div class="snout-right"></div>
+                          <div class="nose">
+                            <div class="nostril"></div>
+                            <div class="nostril"></div>
+                          </div>
+                          <div class="body">
+                              <div class="foot foot-left"></div>
+                              <div class="foot foot-right"></div>
+                          </div>
+                          <div class="tail"></div>
+                          <div class="ear-left"></div>
+                          <div class="ear-right"></div>
                         </div>
-                        <div id="rightEar" class="cat__ear--right">
-                            <div class="cat__ear--right-inside"></div>
-                        </div>
-                    </div>
-
-                    <div id="head" class="cat__head">
-                        <div id="midDot" class="cat__head-dots">
-                            <div id="leftDot" class="cat__head-dots_first"></div>
-                            <div id="rightDot" class="cat__head-dots_second"></div>
-                        </div>
-                        <div class="cat__eye">
-                            <div class="cat__eye--left">
-                                <span class="pupil-left"></span>
-                            </div>
-                            <div class="cat__eye--right">
-                                <span class="pupil-right"></span>
-                            </div>
-                        </div>
-                        <div class="cat__nose"></div>
-
-                        <div class="cat__mouth-contour"></div>
-                        <div class="cat__mouth-left"></div>
-                        <div class="cat__mouth-right"></div>
-
-                        <div class="cat__whiskers-left"></div>
-                        <div class="cat__whiskers-right"></div>
-                    </div>
-
-                    <div class="cat__body">
-
-                        <div class="cat__chest"></div>
-
-                        <div class="cat__chest_inner"></div>
-
-
-                        <div class="cat__paw-left"></div>
-                        <div class="cat__paw-left_inner"></div>
-
-
-                        <div class="cat__paw-right"></div>
-                        <div class="cat__paw-right_inner"></div>
-
-
-                        <div id="tail" class="cat__tail"></div>
-                    </div>
+                      </div>
                 </div>
                 <br>
-                <div class="dnaDiv" id="catDNA">
+                <div class="dnaDiv" id="dogDNA">
                     <b>
                         DNA:
-                        <!-- Colors -->
-                         <span id="dnabody"></span>
-                         <span id="dnamouth"></span>
+                         <span id="dnahead"></span>
                          <span id="dnaeyes"></span>
                          <span id="dnaears"></span>
+                         <span id="dnaspot"></span>
                         
-                         <!-- Cattributes -->
-                         <span id="dnashape"></span>
-                         <span id="dnadecoration"></span>
-                         <span id="dnadecorationMid"></span>
-                         <span id="dnadecorationSides"></span>
-                         <span id="dnadanimation"></span>
-                         <span id="dnaspecial"></span>
+                         <span id="dnagender"></span>
                     </b>
                 </div>
             </div>
-            <div class="col-lg-7 cattributes m-2 light-b-shadow">
+            <div class="col-lg-7 dattributes m-2 light-b-shadow">
 
-<!-- Cat colors -->
-<div id="catColors">
-                <div class="form-group">
-                    <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
-                    <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
-                </div>
+<!-- Dog colors -->
+          <div id="dogColors">
+            <div class="form-group">
+                <label for="formControlRange"><b>Body</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
+                <input type="range" min="10" max="98" class="form-control-range" id="headcolor">
             </div>
-
+            <div class="form-group">
+                <label for="formControlRange"><b>Eyes</b><span class="badge badge-dark ml-2" id="eyescode"></span></label>
+                <input type="range" min="10" max="98" class="form-control-range" id="eyescolor">
             </div>
-
+            <div class="form-group">
+                <label for="formControlRange"><b>Ears</b><span class="badge badge-dark ml-2" id="earscode"></span></label>
+                <input type="range" min="10" max="98" class="form-control-range" id="earscolor">
             </div>
-            <br>
+            <div class="form-group">
+                <label for="formControlRange"><b>Spots</b><span class="badge badge-dark ml-2" id="spotcode"></span></label>
+                <input type="range" min="10" max="98" class="form-control-range" id="spotcolor">
+            </div>
+            <div class="form-group">
+              <label for="formControlRange"><b>Gender</b><span class="badge badge-dark ml-2" id="gendercode"></span></label>
+              <input type="range" min="0" max="1" class="form-control-range" id="gender">
+          </div>
+          </div>
+            <button class="btn btn-grey" id="getRandomDoggy">Get random doggy</button>
+            <button class="btn btn-grey" id="getDefaultDoggy">Default doggy</button>
+            <button class="btn btn-success" id="createDoggy">Create doggy</button>  
+          </div>
 
-        </div>
-
-
+            <div class="alert alert-success" role="alert" id="doggyCreation" style="display: none;"></div>
+          </div>
+        <br>
+    </div>
 
     </div>
-    <footer align="left">
-        <p>Ivan on Tech Academy Bootcamp July 2020</p>
+    <footer align="center">
+        <p class="mb-4">Luca Gobbi - 2022 - <a class="github" href="https://github.com/lucagobbi"><i class="fab fa-github"></i></a></p>
     </footer>
 
   </body>
+  <script src="./index.js"></script>
   <script src="assets/js/colors.js"></script>
   <script src="assets/js/catSettings.js"></script>
   <script src="assets/js/catFactory.js"></script>

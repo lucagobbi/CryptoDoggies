@@ -1,0 +1,177 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Doggies</title>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Peralta&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="./abi.js"></script>
+
+    <link rel="stylesheet" href="assets/css/mystyle.css" />
+    <link rel="stylesheet" href="assets/css/cats.css" />
+    <link rel="stylesheet" href="assets/css/colors.css" />
+    <link rel="stylesheet" href="assets/css/factory.css" />
+    <link rel="stylesheet" href="assets/css/frontend.css" />
+    <link rel="stylesheet" href="assets/css/breed.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="./home.html">Doggies<i class="fas fa-paw logo"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Doggies Factory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./gallery.html">Your Doggies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./breed.html">Breed <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <button class="btn light-b-shadow" id="wallet">Connect wallet</button>
+      </div>
+    </nav>
+
+
+    <div class="container p-5" style="margin-top: 8vh; margin-bottom: 10vh">
+      <div style="margin-bottom: 5vh" align="center">
+        <h1><i class="fas fa-paw"></i> Breed Doggies <i class="fas fa-paw"></i></h1>
+      </div>
+
+      <div class="row mt-4" align="center">
+        <div class="col-md-6">
+          <div
+            class="dame light-b-shadow"
+            id="dame"
+            type="button"
+            data-toggle="modal"
+            data-target="#dameModal"
+          >
+            <i id="dame-i" class="fas fa-venus fa-8x"></i>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="sir light-b-shadow"
+            id="sir"
+            type="button"
+            data-toggle="modal"
+            data-target="#sirModal"
+          >
+            <i id="dame-i" class="fas fa-mars fa-8x"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Dame -->
+      <div
+        class="modal fade"
+        id="dameModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Your Doggies</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row mb-4" id="dogBoxes1"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sir -->
+      <div
+        class="modal fade"
+        id="sirModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Your Doggies</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row mb-4" id="dogBoxes2"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="alert alert-success"
+        role="alert"
+        id="doggyCreation"
+        style="display: none"
+      ></div>
+    </div>
+
+    <footer align="center">
+      <p>Luca Gobbi - 2022</p>
+    </footer>
+  </body>
+  <script src="./index.js"></script>
+  <script src="assets/js/colors.js"></script>
+  <script src="assets/js/catSettings.js"></script>
+  <script src="assets/js/catFactory.js"></script>
+  <script src="assets/js/breed.js"></script>
+</html>

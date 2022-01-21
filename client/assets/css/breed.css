@@ -1,0 +1,67 @@
+.dame,
+.sir {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30%;
+  border: 3px solid #5f807f;
+  border-radius: 5%;
+  width: 75%;
+  height: 75%;
+  transition: transform 0.3s;
+}
+
+i {
+  color: #5f807f;
+}
+
+.dame:hover,
+.sir:hover {
+  transform: scale(1.03, 1.03);
+  transition: 0.3s ease-in-out;
+}
+
+.modalBtn {
+  background: none;
+  border: none;
+}
+
+.col-md-4 {
+  height: 13vh;
+}
+
+.dog-modal {
+  top: 0;
+  left: 15%;
+}
+
+.dog-modal:hover {
+  box-shadow: 0px 2px 15px 5px #62615f;
+  transition: 0.3s;
+}
+
+.dog-breed {
+  width: 27%;
+  height: 32%;
+  position: absolute;
+  top: 20%;
+}
+
+.tail-breed {
+  position: absolute;
+  right: 85%;
+}
+
+#breedBtn {
+  position: absolute;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  left: 42%;
+  width: 15%;
+}
