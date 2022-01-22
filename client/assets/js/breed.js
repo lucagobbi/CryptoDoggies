@@ -150,7 +150,7 @@ async function appendDoggy(id) {
 
     let doggies = $('.dog-breed')
     if(doggies.length == 2) {
-        let breedBtn = `<button class="btn btn-lg btn-success mt-3" id="breedBtn"><span>Breed</span></button>`
+        let breedBtn = `<button class="btn btn-success light-b-shadow my-4" id="breedBtn"><span>Breed</span></button>`
         $('.container').append(breedBtn)
         $('#breedBtn').click(breedDoggies)
     }

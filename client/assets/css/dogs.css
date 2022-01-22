@@ -31,11 +31,6 @@ body {
   z-index: 1;
 }
 
-.dog-gallery {
-  top: 15%;
-  left: 22%;
-}
-
 .eye-right {
   position: absolute;
   width: 10%;
@@ -246,9 +241,10 @@ body {
 }
 
 .tail {
-  width: 9%;
-  height: 40%;
+  width: 10%;
+  height: 52%;
   background-color: #f9f8fb;
+  box-shadow: 1px 5px 4px rgb(82 82 82);
   transform: rotate(-40deg);
   border-radius: 47% 47% 0;
   animation: wag 0.1s infinite alternate;

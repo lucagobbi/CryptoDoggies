@@ -1,0 +1,23 @@
+.dogBed {
+  border: 2px solid #5f807f;
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+.dog-gallery {
+  top: 14%;
+  left: 25%;
+  width: 38%;
+  height: 45%;
+}
+
+.traits {
+  position: absolute;
+  top: 15%;
+  left: 23%;
+  font-family: "Peralta";
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #5f807f;
+}
