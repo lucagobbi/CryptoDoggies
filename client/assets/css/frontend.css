@@ -65,11 +65,11 @@ h6,
 
 .btn-success {
   background-color: #5f807f;
-  border: 3px solid #42574b;
+  border: none;
 }
 .btn-success:hover {
+  border: none;
   background-color: #5f807f;
-  border: 3px solid #42574b;
   transition: 0.3s ease-in-out;
 }
 
@@ -127,8 +127,13 @@ h6,
   margin-bottom: 120px;
 }
 
+.alert-success {
+  background-color: #8ed08bb3;
+  border: none;
+}
+
 footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 6vh;
